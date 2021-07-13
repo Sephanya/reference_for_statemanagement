@@ -1,7 +1,19 @@
 
-class DataModelProvider {
-  final int id;
+class DataModel {
+  final String title;
   final String name;
-  final String description;
-  DataModelProvider(this.id, this.name, this.description);
+  final int id ;
+
+  DataModel({required this.id
+    ,required this.name
+    ,required this.title});
+
+  factory DataModel.fromJson(Map<String, dynamic> json) {
+    return new DataModel(
+      id : json['id'],
+      name: json['title'],
+      title: json['docid'],
+    );
+  }
+
 }

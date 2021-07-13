@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:state_getx_bloc_provider/Getx%20App/controller/getxcontroller.dart';
 import 'package:state_getx_bloc_provider/Widgets/custom_text.dart';
+import 'package:state_getx_bloc_provider/main.dart';
 
 
 import 'add_itemgetx_screen.dart';
@@ -23,7 +24,15 @@ class GetxHomePage extends GetView<DataController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Getx State')),
+      appBar: AppBar(title: Text('Getx State'),
+        leading: BackButton(
+          onPressed: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),);
+
+          },
+        ),),
       body: Obx(
             () {
           if (list.isNotEmpty) {

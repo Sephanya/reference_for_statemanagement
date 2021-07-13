@@ -9,6 +9,7 @@ import 'package:state_getx_bloc_provider/Bloc%20App/model/model_class.dart';
 import 'package:state_getx_bloc_provider/Widgets/FloatingButton.dart';
 import 'package:state_getx_bloc_provider/Widgets/custom_text.dart';
 
+import '../../../main.dart';
 import 'add_item_screen.dart';
 import 'update_item_screen.dart';
 
@@ -24,7 +25,15 @@ class BlocHomePage extends StatelessWidget {
     context.read<CubitHome>().fetchData();
 
     return Scaffold(
-        appBar:  AppBar(title: Text('Bloc State'),),
+        appBar:  AppBar(title: Text('Bloc State'),
+          leading: BackButton(
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),);
+
+            },
+          ),),
         body: BlocBuilder<CubitHome, HomeState>(
           builder: (context, state) {
             if (state is HomeLoading) {
