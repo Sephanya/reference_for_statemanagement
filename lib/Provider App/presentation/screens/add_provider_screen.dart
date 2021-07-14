@@ -22,7 +22,7 @@ class AddData extends StatelessWidget {
     }else {
       id = Provider
           .of<ItemAddNotifier>(context, listen: false)
-          .itemList[index].id;
+          .itemList[index-1].id;
     }
     return Scaffold(
         appBar: AppBar(
