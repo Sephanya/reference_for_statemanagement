@@ -77,7 +77,7 @@ class CustomButtonWidget extends StatelessWidget {
 
   Color? setBgColor() {
     if (this.bgColor == null) {
-      return this.bgColor = Colors.black;
+      return this.bgColor = Colors.blue;
     } else {
       return this.bgColor;
     }
