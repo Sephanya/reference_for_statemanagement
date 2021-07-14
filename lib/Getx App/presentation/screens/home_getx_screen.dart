@@ -36,7 +36,7 @@ class GetxHomePage extends GetView<DataController> {
             () {
           if (list.isNotEmpty) {
             if (scrollDirection == Axis.horizontal)
-              return verticalListView(context);
+              return horizontalListView(context);
             else
               return verticalListView1();
           } else
@@ -146,7 +146,7 @@ class GetxHomePage extends GetView<DataController> {
     );
   }
 
-  Row verticalListView(BuildContext context) {
+  Row horizontalListView(BuildContext context) {
     return Row(
       children: [
         Expanded(
